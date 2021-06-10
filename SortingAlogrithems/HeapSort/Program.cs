@@ -10,6 +10,13 @@ namespace HeapSort
     {
         static void Main(string[] args)
         {
+            var arr = new int[] { 10, 1, 3, 7, 2, 5, 21, 17, 11 };
+            HeapSort.Sort(arr);
+            foreach (var item in arr)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.WriteLine();
         }
     }
 }
