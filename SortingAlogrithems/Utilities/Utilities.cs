@@ -14,5 +14,14 @@ namespace Utilities
             arr[a] = arr[b];
             arr[b] = temp;
         }
+
+        public static void PrintArray(int[] arr)
+        {
+            foreach (var item in arr)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.WriteLine();
+        }
     }
 }
