@@ -18,7 +18,7 @@ namespace HeapSort
             }
             for (int i = length - 1; i >= 0; i--)
             {
-                Swap(arr, i, 0);
+                Utilities.Utilities.Swap(arr, i, 0);
                 Heapify(arr, i-1, 0);
             }
         }
@@ -39,15 +39,9 @@ namespace HeapSort
 
             if (largetInd != ind)
             {
-                Swap(arr, ind, largetInd);
+                Utilities.Utilities.Swap(arr, ind, largetInd);
                 Heapify(arr, n, largetInd);
             }
-        }
-        public static void Swap(int[] arr, int a, int b)
-        {
-            var temp = arr[a];
-            arr[a] = arr[b];
-            arr[b] = temp;
         }
     }
 }

@@ -17,16 +17,10 @@ namespace BubbleSort
                 {
                     if (arr[j] >arr[j+1])
                     {
-                        Swap(arr, i, j);
+                        Utilities.Utilities.Swap(arr, i, j);
                     }
                 }
             }
-        }
-        public static void Swap(int[] arr, int a, int b)
-        {
-            var temp = arr[a];
-            arr[a] = arr[b];
-            arr[b] = temp;
         }
     }
 }
