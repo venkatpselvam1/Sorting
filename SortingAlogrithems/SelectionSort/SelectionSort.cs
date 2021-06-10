@@ -10,20 +10,17 @@ namespace SelectionSort
     {
         public static void Sort(int[] arr)
         {
-            for (int i = 1; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                bool canSwap = false;
-                for (int j = 0; j < i; j++)
+                int smallest = i;
+                for (int j = i+1; j < arr.Length; j++)
                 {
-                    if (!canSwap && arr[j] > arr[i])
+                    if (arr[j] < arr[smallest])
                     {
-                        canSwap = true;
-                    }
-                    if (canSwap)
-                    {
-                        Utilities.Utilities.Swap(arr, j, i);
+                        smallest = j;
                     }
                 }
+                Utilities.Utilities.Swap(arr, i, smallest);
             }
         }
     }
