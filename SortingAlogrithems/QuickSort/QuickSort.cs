@@ -25,6 +25,55 @@ namespace QuickSort
         }
         public static int GetPartiton(int[] arr, int start, int end)
         {
+            var pivotValue = arr[start];
+            var a_i = start + 1;
+            var b_i = end;
+            while (a_i < b_i)
+            {
+                if (arr[a_i]<pivotValue)
+                {
+                    a_i++;
+                }
+                if (a_i != b_i && arr[b_i] > pivotValue)
+                {
+                    b_i--;
+                }
+                if (arr[a_i] > arr[b_i])
+                {
+                    Utilities.Utilities.Swap(arr, a_i, b_i);
+                }
+            }
+            var swapInd = arr[a_i] < pivotValue ? a_i : (a_i - 1);
+            Utilities.Utilities.Swap(arr, a_i, start);
+            return swapInd;
+        }
+        public static int GetPartiton2(int[] arr, int start, int end)
+        {
+            var pivotValue = arr[end];
+            int a_i = start;
+            int b_i = end - 1;
+            while (a_i < b_i)
+            {
+                if (arr[a_i] < pivotValue)
+                {
+                    a_i++;
+                }
+                if (a_i != b_i && arr[b_i] > pivotValue)
+                {
+                    b_i--;
+                }
+                if (arr[a_i] > arr[b_i])
+                {
+                    Utilities.Utilities.Swap(arr, a_i, b_i);
+                }
+            }
+
+            var swapInd = arr[a_i] > pivotValue ? a_i : (a_i + 1);
+            Utilities.Utilities.Swap(arr, swapInd, end);
+            return swapInd;
+        }
+        public static int GetPartiton1(int[] arr, int start, int end)
+        {
             var pivotValue = arr[end];
             int j = start - 1;
             for (int i = start; i < end; i++)
