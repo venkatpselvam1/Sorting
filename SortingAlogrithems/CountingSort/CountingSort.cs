@@ -11,7 +11,7 @@ namespace CountingSort
         public static void Sort(int[] arr)
         {
             Array.Sort(arr);
-            var max = GetMax(arr);
+            var max = Utilities.Utilities.GetMax(arr);
             var countArr = new int[max + 1];
 
             int length = arr.Length;
@@ -30,19 +30,6 @@ namespace CountingSort
                     arr[countArr[i]-1] = i;
                 }
             }
-        }
-        public static int GetMax(int[] arr)
-        {
-            int max = arr[0];
-            for (int i = 1; i < arr.Length; i++)
-            {
-                if (max < arr[i])
-                {
-                    max = arr[i];
-                }
-            }
-
-            return max;
         }
     }
 }
